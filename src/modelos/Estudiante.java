@@ -98,7 +98,7 @@ public class Estudiante{
     public double CalcularNotaFinal(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
         return CalcularNota(p,nexamen,ndeberes,nlecciones,ntalleres);
     }
-    
+    /*
     //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. Esta nota es solo el promedio de las dos calificaciones anteriores.
     public double CalcularNotaTotal(Paralelo p){
         double notaTotal=0;
@@ -110,7 +110,20 @@ public class Estudiante{
         }
         return notaTotal;
         
+    }*/
+        public double CalcularNotaTotal(Paralelo p){
+       for(Paralelo par:paralelos){
+            if(p.equals(par)){
+                return (p.getMateria().notaInicial+p.getMateria().notaFinal)/2;
+            }
+        } 
+        return 0;
     }
+    
+    
+    
+    
+    
 }
         
     
